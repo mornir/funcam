@@ -2,6 +2,7 @@ const video = document.querySelector('.handsome')
 const canvas = document.querySelector('#paint')
 const ctx = canvas.getContext('2d')
 const strip = document.querySelector('.strip')
+const snap = document.querySelector('.snap')
 
 async function go() {
   // first ask for get user media
@@ -10,7 +11,9 @@ async function go() {
 }
 
 function takePhoto() {
-  console.log('Taking photo!')
+  snap.currentTime = 0
+  snap.play()
+
   canvas.width = video.videoWidth
   canvas.height = video.videoHeight
 
